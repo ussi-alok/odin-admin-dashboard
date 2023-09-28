@@ -6,5 +6,34 @@
 }
 body{
     display: grid;
-    grid-template-columns:1fr 4fr; 
+    grid-template-columns:2fr 4fr; 
+    height: 100vh;
+}
+
+aside{
+    background-color: #1992d4;
+}
+img{
+    height: 25px;
+    width: 50px;
+    display: inline-block;
+    /* background-color: red; */
+    filter: grayscale(10%);
+}
+.header>img{
+    height: 50px;
+}
+.header>h3{
+    align-self: center;
+}
+.interative-menu,.header,.help-menu{
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    gap: 15px;
+    margin: 10px;
+    background-color: #1992d4;
+    color: #fff;
+}
+.interative-menu,.help-menu{
+    margin: 50px 10px ;
 }

@@ -101,3 +101,144 @@ nav>*{
     padding: 10px 25px;
     border-radius: 25px;
 }
+
+/*section style goes here*/
+.main-content{
+    display:grid;
+    grid:1fr repeat(3,0.28fr) 1fr / repeat(2,1.4fr) 1fr;
+    height: calc(100% - 170px );
+    padding:20px;
+    gap: 20px;
+    position: relative;
+}
+.one::before,.announcements::before,.trending::before{
+    position:absolute;
+    top:-2%;
+}
+.one::before{
+    content:"Your Project";
+    
+}
+.one{
+    background: brown;
+    /* display: flex;
+    align-items: center; */
+}
+.two{
+    background: silver;
+}
+
+.three{
+    grid-area:2/1/5/2;
+    background: #f18484;
+}
+.four{
+    grid-area:2/2/5/3;
+    background: grey;
+}
+.five{
+    grid-area:5/1/-1/2;
+    background: blue;
+}
+.six{
+    grid-area:5/2/-1/3;
+    background: green;
+}
+/* announcement and trending */
+.announcements::before{
+    content:"Announcements";
+}
+.announcements{
+    grid-area: 1/3/3/4;
+    background: pink;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(15,1fr);
+    
+}
+.head1,.head2,.head3,.info1,.info2,.info3{
+    grid-column: 2/10;
+}
+.announcements .head1{
+    /* grid-area: h1; */
+    /* grid-area: 2/2/3/10; */
+    background-color: red;
+    grid-row: 2 /span 1;
+}
+.info1{
+    /* grid-area:h2; */
+    /* grid-area: 3/2/5/10; */
+    background-color: blue;
+    /* grid-column-start: 2;
+    grid-column-end:10; */
+    grid-row: 3/5;
+    position: relative;
+}
+
+.head2{
+    grid-row: 7;
+    background-color: green;
+}
+.info2{
+    background-color: brown;
+    grid-row: 8/10;
+    position: relative;
+}
+.info2::after,.info1::after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    bottom: -50%;
+    /* z-index: 2; */
+}
+
+.head3{
+    background-color: silver;
+    grid-row: 12;
+}
+.info3{
+    background-color: rgb(26, 255, 0);
+    grid-row: 13/15;
+}
+.trending{
+    grid-area:4/3/6/4;
+    background: yellow;
+    position: relative;
+    display: grid;
+}
+.trending::before{
+    content:"Trending";
+    top: -13%;
+}
+/* individual card / projects-card goes down there */
+.projects-card{
+    border-radius: 12px;
+    border-left: 10px solid yellow;
+    padding: 15px;
+    display: grid;
+    grid: repeat(5,0.2fr) / repeat(5  ,0.2fr);
+    grid-template-areas:
+        "hd  hd  hd   hd   hd"
+        "pg  pg  pg   pg   pg" 
+        "pg  pg  pg   pg   pg"
+        "pg  pg  pg   pg   pg"
+        "blk blk icn1 icn2 icn3"   
+    ;
+}
+
+.projects-card>p:first-child{
+    grid-area: hd;
+}
+.projects-card>.paragraph{
+    grid-area: pg;
+}
+.projects-card>.star{
+    grid-area:icn1;
+}.projects-card>.eye{
+    grid-area: icn2;
+}
+.projects-card>.fork{
+    grid-area: icn3;
+}

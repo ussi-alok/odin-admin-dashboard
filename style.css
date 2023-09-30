@@ -126,14 +126,6 @@ nav>*{
 .one,.two,.three,.four,.five,.six{
     background-color: white;
 }
-.one{
-    /* background: white; */
-    /* display: flex;
-    align-items: center; */
-}
-.two{
-    /* background: silver; */
-}
 
 .three{
     grid-area:2/1/5/2;
